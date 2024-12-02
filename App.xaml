@@ -1,0 +1,92 @@
+﻿<Application x:Class="ALBRIGHT_ASSIGNMENT_4_1_REWRITE.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ALBRIGHT_ASSIGNMENT_4_1_REWRITE"
+             xmlns:vm="clr-namespace:ALBRIGHT_ASSIGNMENT_4_1_REWRITE.ViewModels"
+             xmlns:v="clr-namespace:ALBRIGHT_ASSIGNMENT_4_1_REWRITE.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <DataTemplate DataType="{x:Type vm:BookViewModel}">
+            <v:BookView/>
+        </DataTemplate>
+
+        <BitmapImage x:Key="DefaultContactImage" CacheOption="OnDemand" CreateOptions="None" Rotation="Rotate0" SourceRect="Empty" UriSource="/Resources/defaultContact.png"/>
+
+
+        <SolidColorBrush x:Key="JacksonsPurple" Color="#40407a"/>
+        <SolidColorBrush x:Key="LuckyPoint" Color="#2c2c54"/>
+
+        <SolidColorBrush x:Key="C64Purple" Color="#706fd3"/>
+        <SolidColorBrush x:Key="Liberty" Color="#474787"/>
+
+        <SolidColorBrush x:Key="SwanWhite" Color="#f7f1e3"/>
+        <SolidColorBrush x:Key="HotStone" Color="#aaa69d"/>
+
+        <SolidColorBrush x:Key="SummerSky" Color="#34ace0"/>
+        <SolidColorBrush x:Key="AngelBlue" Color="#227093"/>
+
+        <SolidColorBrush x:Key="CelestialGreen" Color="#33d9b2"/>
+        <SolidColorBrush x:Key="PalmSpringsSplash" Color="#218c74"/>
+
+        <SolidColorBrush x:Key="FluorescentRed" Color="#ff5252"/>
+        <SolidColorBrush x:Key="EyeOfNewt" Color="#b33939"/>
+
+        <SolidColorBrush x:Key="SyntheticPumpkin" Color="#ff793f"/>
+        <SolidColorBrush x:Key="ChileanFire" Color="#cd6133"/>
+
+        <SolidColorBrush x:Key="CrocodileTooth" Color="#d1ccc0"/>
+        <SolidColorBrush x:Key="GreyPorcelain" Color="#84817a"/>
+
+        <SolidColorBrush x:Key="MandarinSorbet" Color="#ffb142"/>
+        <SolidColorBrush x:Key="AlamedaOchre" Color="#cc8e35"/>
+
+        <SolidColorBrush x:Key="SpicedButternut" Color="#ffda79"/>
+        <SolidColorBrush x:Key="Desert" Color="#ccae62"/>
+
+        <LinearGradientBrush x:Key="JacksonPurpleLuckypointGradient" EndPoint="0,1">
+            <GradientStop Color="#40407a" Offset="0.0"/>
+            <GradientStop Color="#2c2c54" Offset="1.0"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="FluorescentRedEyeOfNewtGradient" EndPoint="0,1">
+            <GradientStop Color="#ff5252" Offset="0.0"/>
+            <GradientStop Color="#b33939" Offset="1.0"/>
+        </LinearGradientBrush>
+        
+        <!--Controls-->
+        <Style x:Key="MenuTabButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource JacksonPurpleLuckypointGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource MandarinSorbet}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource JacksonsPurple}"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style x:Key="MenuIconButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource JacksonPurpleLuckypointGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource CelestialGreen}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <Style x:Key="DetailLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource GreyPorcelain}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <Style x:Key="ContentLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style x:Key="DetailBorder" TargetType="Border">
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Background" Value="{StaticResource JacksonPurpleLuckypointGradient}"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

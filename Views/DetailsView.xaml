@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="ALBRIGHT_ASSIGNMENT_4_1_REWRITE.Views.DetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ALBRIGHT_ASSIGNMENT_4_1_REWRITE.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1200" d:DesignWidth="450">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left" Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Label Content="{Binding SelectedContact.Name,FallbackValue=NULL}"
+                               HorizontalAlignment="Center" FontSize="24"/>
+                    </StackPanel>
+                    <CheckBox Content="isFavorite"/>
+                </StackPanel>
+                <Grid Height="125" Width="125">
+                    <Image Height="125" Width="125" Source="{Binding SelectedContact.ImagePath, FallbackValue={StaticResource DefaultContactImage},
+                        TargetNullValue={StaticResource DefaultContactImage}}"/>
+                    <Button Style="{StaticResource MenuIconButton}" Background="{StaticResource FluorescentRedEyeOfNewtGradient}"
+                            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                            Foreground="Black" FontWeight="DemiBold">   
+                        Browse
+                    </Button>
+                    
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal">
+                <Button Style="{StaticResource MenuIconButton}" Background="{StaticResource CelestialGreen}" Width="90" Height="40" Margin="5">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/saveIcon.png">
+
+                            </Image>
+                            <Label FontWeight="Bold">
+                                Save
+                            </Label>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Margin="5" >
+            <StackPanel>
+                <Border Style="{StaticResource DetailBorder}">
+                    <Label FontWeight="Bold" Foreground="Green" Content="Phone">
+                        
+                    </Label>
+                </Border>
+                
+                <StackPanel>
+                    <!--Home Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Home"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.PhoneNumbers[0],FallbackValue=NULL}"/>
+                    <!--Cell Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Mobile"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.PhoneNumbers[1],FallbackValue=NULL}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="5" >
+            <StackPanel>
+                <Border Style="{StaticResource DetailBorder}">
+                    <Label FontWeight="Bold" Foreground="Green" Content="Emails">
+
+                    </Label>
+                </Border>
+
+                <StackPanel>
+                    <!--Home Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Personal"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.Emails[0],FallbackValue=NULL}"/>
+                    <!--Cell Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Work"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.Emails[1],FallbackValue=NULL}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="5" >
+            <StackPanel>
+                <Border Style="{StaticResource DetailBorder}">
+                    <Label FontWeight="Bold" Foreground="Green" Content="Locations">
+
+                    </Label>
+                </Border>
+
+                <StackPanel>
+                    <!--Home Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Home"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.Locations[0],FallbackValue=NULL}"/>
+                    <!--Cell Phone-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Work"/>
+                    <Label Style="{StaticResource ContentLabel}" Content="{Binding SelectedContact.Locations[1],FallbackValue=NULL}"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>
